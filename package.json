@@ -1,20 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-bug-11994",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A demo of an Electron Bug",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
+  "repository": "https://github.com/jakofranko/electron-bug-11994",
+  "author": "Jake Franklin <jacob.d.franklin@gmail.com>",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.8.2"

@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <title>Electron test</title>
+    <style>
+        html, body, #outer, #inner {
+            height: 100%;
+            box-sizing: border-box;
+        }
+        body, #outer, #inner {
+            margin: 25px;
+            padding: 25px
+        }
+        body {
+            background-color: white;
+        }
+        #outer{
+            -webkit-app-region: drag;
+            background-color: rebeccapurple;
+        }
+        #inner {
+            -webkit-app-region: no-drag;
+            background-color: seagreen;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+        window.addEventListener('dragover', (e) => {
+            console.log('dragover');
+        });
+        window.addEventListener('click', (e) => {
+            console.log('click');
+        });
     </script>
-  </body>
+    <p>N O   D R A G   ---   E V E N T S</p>
+    <div id="outer">
+        <p>D R A G   ---   N O   E V E N T S</p>
+        <div id="inner">
+            <p>N O   D R A G   ---   E V E N T S</p>
+        </div>
+    </div>
+</body>
 </html>
